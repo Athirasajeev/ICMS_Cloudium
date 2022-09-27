@@ -15,10 +15,10 @@ public class HomeTest extends BaseClass{
 	}
 
 	@Test
-	public void toClickProviderMenu() {
+	public void toClickProviderMenu() throws InterruptedException {
 		hp.toClickProvider().click();
-		//hp.toEnterEmail().click();
-		//hp.toEnterEmail().sendKeys("agathas@8w0r65.onmicrosoft.com");
+		Thread.sleep(3000);
+		
 	}
 
 }

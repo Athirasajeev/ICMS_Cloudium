@@ -7,8 +7,8 @@
         <methods>
           <include name="pageObjects"/>
           <include name="loadConfig"/>
-          <include name="firstCall"/>
           <include name="endbrowser"/>
+          <include name="firstCall"/>
           <include name="toClickProviderMenu"/>
         </methods>
       </class> <!-- TestCases.HomeTest -->
