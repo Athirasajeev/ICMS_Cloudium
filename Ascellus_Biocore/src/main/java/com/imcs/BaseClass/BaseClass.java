@@ -25,6 +25,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 import com.imcs.Actions.Action;
+import com.imcs.PageObjects.LoginPage;
+import com.imcs.Utilities.ExcelRead;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -52,7 +54,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 		}
 	}
 	@BeforeMethod
-	public void firstCall() throws InterruptedException, AWTException {
+	public void firstCall() throws InterruptedException, AWTException, IOException {
 		launchApp();
 		
 	}
@@ -60,7 +62,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 	{
 		return driver.get();
 	}
-	public void launchApp() throws InterruptedException, AWTException {
+	public void launchApp() throws InterruptedException, AWTException, IOException {
 		
 	   String browserName = prop.getProperty("Browser");
 		if (browserName.equalsIgnoreCase("Chrome")) {
@@ -82,29 +84,25 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 		act.pageLoadTimeOut(getDriver(), 30);   
 		getDriver().get(prop.getProperty("url"));
 		Thread.sleep(3000);
-		//find the element in selenium webdriver
-		WebElement userNameTxt = getDriver().findElement(By.id("i0116")); 
+		
+		/*WebElement userNameTxt = getDriver().findElement(By.id("i0116")); 
 		//WebElement nextBtn = getDriver().findElement(By.id("idSIButton9")); 
 		WebElement passwordTxt = getDriver().findElement(By.id("i0118"));
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) getDriver();  	
 		// set the text
-		jsExecutor.executeScript("arguments[0].value='agathas@8w0r65.onmicrosoft.com'", userNameTxt); 
+		jsExecutor.executeScript("arguments[0].value=user", userNameTxt); 
 		Thread.sleep(2000);
 		getDriver().findElement(By.id("idSIButton9")).click();
 		Thread.sleep(2000);
 		//jsExecutor.executeScript("arguments[0].value='ascellus123@'", passwordTxt); 
-		getDriver().findElement(By.id("i0118")).sendKeys("ascellus123@");
+		getDriver().findElement(By.id("i0118")).sendKeys(pass);
 		Thread.sleep(2000);
 		getDriver().findElement(By.id("idSIButton9")).click();
 		Thread.sleep(3000);
 		getDriver().findElement(By.id("idBtn_Back")).click();
 		//jsExecutor.executeScript("arguments[0].click();", signinBtn);  
-		Thread.sleep(5000);
-
-
-		
-		
-
+		Thread.sleep(5000);*/
+			
 	}
 	@AfterMethod
 	public void endbrowser()

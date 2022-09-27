@@ -13,7 +13,8 @@ public class HomePage extends BaseClass{
 	WebElement provider;
 	@FindBy(xpath="//input[@type='email']")
 	WebElement emailinput;
-	
+	@FindBy(xpath="//img[@class='ng-tns-c230-0']")
+	WebElement logo;
 	
 	
 	public HomePage(WebDriver driver) {
@@ -29,5 +30,9 @@ public class HomePage extends BaseClass{
 	public WebElement toEnterEmail()
 	{
 		return emailinput;
+	}
+	public WebElement isDisplayedLogo()
+	{
+		return logo;
 	}
 }
